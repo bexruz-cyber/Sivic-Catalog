@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/output.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <body>
+    <!-- header top -->
+    <div class="xl:py-2.5 pt-1 max-xl:mb-1.5">
+      <div class="container flex items-center max-xl:justify-end">
+        <!-- dropdowns -->
+        <button class="flex items-center gap-2 mr-2 xl:mr-5">
+          Москва
+          <svg
+            width="8"
+            height="6"
+            viewBox="0 0 8 6"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M1 1L4 4L7 1" stroke="#333333" stroke-linecap="round" />
+          </svg>
+        </button>
+        <button class="flex items-center gap-2 xl:mr-auto">
+          RU
+          <svg
+            width="8"
+            height="6"
+            viewBox="0 0 8 6"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M1 1L4 4L7 1" stroke="#333333" stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <div class="xl:flex hidden items-center gap-18 mr-hidden xl:mr-30.5">
+          <a href="#" class="flex items-center gap-3 text-base font-medium">
+            <svg
+              width="19"
+              height="16"
+              viewBox="0 0 19 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.04154 1.53172C2.52074 1.53172 2.07286 1.71661 1.69788 2.08638C1.32291 2.45614 1.13542 2.90142 1.13542 3.42222V4.46902L8.79115 8.29689C8.90572 8.34897 9.0229 8.37501 9.14268 8.37501C9.26247 8.37501 9.37444 8.34897 9.4786 8.29689L17.1343 4.46902V3.42222C17.1343 2.90142 16.9494 2.45614 16.5797 2.08638C16.2099 1.71661 15.7594 1.53172 15.2282 1.53172H3.04154ZM1.13542 5.75019V12.5778C1.13542 13.0986 1.32291 13.5439 1.69788 13.9137C2.07286 14.2835 2.52074 14.4683 3.04154 14.4683H15.2282C15.7594 14.4683 16.2099 14.2835 16.5797 13.9137C16.9494 13.5439 17.1343 13.0986 17.1343 12.5778V5.75019L9.13487 9.74991L1.13542 5.75019ZM-0.00512695 3.42222C-0.00512695 3.00558 0.0729927 2.61498 0.229232 2.25043C0.395887 1.87545 0.617226 1.54995 0.893249 1.27393C1.16927 0.997908 1.48956 0.781776 1.85412 0.625537C2.2291 0.458882 2.6249 0.375554 3.04154 0.375554H15.2282C15.6553 0.375554 16.0511 0.458882 16.4156 0.625537C16.7906 0.781776 17.1161 0.997908 17.3921 1.27393C17.6681 1.54995 17.8843 1.87545 18.0405 2.25043C18.1968 2.61498 18.2749 3.00558 18.2749 3.42222V12.5778C18.2749 12.9945 18.1968 13.3851 18.0405 13.7496C17.8843 14.1246 17.6681 14.4501 17.3921 14.7261C17.1161 15.0022 16.7906 15.2183 16.4156 15.3745C16.0511 15.5412 15.6553 15.6245 15.2282 15.6245H3.04154C2.6249 15.6245 2.2291 15.5412 1.85412 15.3745C1.48956 15.2183 1.16927 15.0022 0.893249 14.7261C0.617226 14.4501 0.395887 14.1246 0.229232 13.7496C0.0729927 13.3851 -0.00512695 12.9945 -0.00512695 12.5778V3.42222Z"
+                fill="#333333"
+              />
+            </svg>
+            sivik@sivik.ru
+          </a>
+          <p class="text-base font-medium">Часы работы с 09:00 до 18:00</p>
+
+          <a
+            href="tel:8 800 350 38 95"
+            class="flex items-center gap-3 text-base font-medium"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.61597 1.34565C9.62638 1.31441 9.6368 1.28578 9.64721 1.25974C9.65762 1.23371 9.67324 1.21028 9.69407 1.18945C9.7149 1.15821 9.73573 1.13478 9.75655 1.11916C9.77738 1.10354 9.80342 1.08531 9.83466 1.06448C9.8659 1.05407 9.89454 1.04366 9.92057 1.03324C9.9466 1.02283 9.97524 1.01242 10.0065 1.002C10.0377 1.002 10.069 1.002 10.1002 1.002C10.1314 1.002 10.1627 1.00721 10.1939 1.01762C10.7563 1.16341 11.29 1.3821 11.795 1.67369C12.3001 1.96527 12.7557 2.31413 13.1618 2.72026C13.5784 3.13681 13.9298 3.59761 14.2162 4.10267C14.5026 4.60774 14.7187 5.14144 14.8645 5.70378C14.8749 5.73502 14.8827 5.76626 14.8879 5.7975C14.8931 5.82874 14.8905 5.85998 14.8801 5.89122C14.8801 5.91205 14.8749 5.93808 14.8645 5.96933C14.854 6.00057 14.8384 6.03181 14.8176 6.06305C14.8072 6.08388 14.7916 6.10731 14.7707 6.13334C14.7499 6.15938 14.7291 6.1776 14.7083 6.18801C14.677 6.20884 14.6484 6.22706 14.6223 6.24268C14.5963 6.25831 14.5677 6.27132 14.5364 6.28174C14.5156 6.28174 14.4974 6.28434 14.4818 6.28955C14.4661 6.29475 14.4479 6.29736 14.4271 6.29736C14.375 6.29736 14.323 6.28694 14.2709 6.26612C14.2188 6.24529 14.172 6.21925 14.1303 6.18801C14.0886 6.15677 14.0548 6.12032 14.0288 6.07867C14.0027 6.03701 13.9845 5.99015 13.9741 5.93808C13.8491 5.45906 13.6617 5.00346 13.4118 4.57129C13.1618 4.13912 12.8598 3.74601 12.5058 3.39194C12.1517 3.03788 11.7586 2.73588 11.3264 2.48595C10.8942 2.23602 10.4334 2.04858 9.944 1.92361C9.91276 1.9132 9.88412 1.90279 9.85809 1.89237C9.83205 1.88196 9.80862 1.86634 9.7878 1.84551C9.75655 1.82468 9.73312 1.80386 9.7175 1.78303C9.70188 1.7622 9.68366 1.73617 9.66283 1.70493C9.65242 1.67369 9.642 1.64505 9.63159 1.61901C9.62118 1.59298 9.61076 1.56434 9.60035 1.5331C9.60035 1.50186 9.60035 1.47062 9.60035 1.43938C9.60035 1.40814 9.60556 1.37689 9.61597 1.34565ZM9.31918 4.40727C9.89193 4.56348 10.3579 4.82122 10.7172 5.18049C11.0765 5.53976 11.3342 6.00057 11.4904 6.56291C11.5008 6.61497 11.5191 6.66183 11.5451 6.70349C11.5711 6.74514 11.605 6.78159 11.6466 6.81283C11.6883 6.84407 11.7325 6.86751 11.7794 6.88313C11.8263 6.89875 11.8757 6.90656 11.9278 6.90656C11.9486 6.90656 11.9695 6.90656 11.9903 6.90656C12.0111 6.90656 12.0319 6.90135 12.0528 6.89094C12.084 6.89094 12.1126 6.88313 12.1387 6.86751C12.1647 6.85188 12.1934 6.83366 12.2246 6.81283C12.2454 6.79201 12.2662 6.77118 12.2871 6.75035C12.3079 6.72952 12.3235 6.70349 12.3339 6.67225C12.3548 6.65142 12.3704 6.62539 12.3808 6.59415C12.3912 6.56291 12.3964 6.53166 12.3964 6.50042C12.3964 6.46918 12.3964 6.44054 12.3964 6.41451C12.3964 6.38848 12.3912 6.35984 12.3808 6.3286C12.1934 5.59964 11.8601 4.99565 11.3811 4.51662C10.9021 4.03759 10.2981 3.69914 9.56911 3.50128C9.53787 3.50128 9.50663 3.49868 9.47538 3.49347C9.44414 3.48827 9.4129 3.49087 9.38166 3.50128C9.35042 3.50128 9.32178 3.50649 9.29575 3.5169C9.26971 3.52732 9.24108 3.53773 9.20984 3.54815C9.15777 3.57939 9.11351 3.62104 9.07706 3.67311C9.04061 3.72518 9.01198 3.78245 8.99115 3.84494C8.98073 3.897 8.97813 3.95428 8.98334 4.01676C8.98855 4.07924 9.00677 4.13652 9.03801 4.18859C9.06925 4.24066 9.11091 4.28752 9.16297 4.32917C9.21504 4.37083 9.26711 4.39686 9.31918 4.40727ZM15.5049 11.952C15.432 12.4623 15.2758 12.9413 15.0363 13.3891C14.7968 13.8369 14.4844 14.2326 14.0991 14.5762C13.7137 14.9095 13.2816 15.1672 12.8026 15.3494C12.3235 15.5317 11.8289 15.6228 11.3186 15.6228C9.7878 15.6228 8.35591 15.3312 7.02296 14.7481C5.6796 14.1649 4.50806 13.3734 3.50835 12.3737C2.50864 11.374 1.7224 10.2077 1.14965 8.87474C0.566485 7.53138 0.274902 6.0995 0.274902 4.5791C0.274902 4.06883 0.363419 3.57418 0.540451 3.09515C0.717484 2.61612 0.977825 2.18396 1.32148 1.79865C1.65471 1.41334 2.04783 1.09833 2.50083 0.853608C2.95382 0.608887 3.43545 0.455285 3.94572 0.392802C4.06027 0.382389 4.17482 0.387596 4.28937 0.408423C4.40392 0.429251 4.51327 0.470905 4.6174 0.533387C4.72154 0.585456 4.81266 0.655748 4.89076 0.744265C4.96887 0.832781 5.02875 0.934314 5.0704 1.04886L6.71055 4.70406C6.75221 4.78737 6.77824 4.87329 6.78866 4.9618C6.79907 5.05032 6.80428 5.14144 6.80428 5.23516C6.79386 5.31847 6.77304 5.40438 6.74179 5.4929C6.71055 5.58142 6.67411 5.66212 6.63245 5.73502C6.62204 5.74543 6.61423 5.75324 6.60902 5.75845C6.60381 5.76366 6.596 5.77147 6.58559 5.78188L4.96106 7.73444C4.95064 7.74486 4.94544 7.75527 4.94544 7.76568C4.94544 7.7761 4.94544 7.78651 4.94544 7.79693C4.94544 7.80734 4.94544 7.81775 4.94544 7.82817C4.94544 7.83858 4.95064 7.84899 4.96106 7.85941C5.25264 8.4634 5.68741 9.05438 6.26537 9.63234C6.84333 10.2103 7.44472 10.6451 8.06954 10.9366C8.07995 10.9471 8.09037 10.9523 8.10078 10.9523C8.11119 10.9523 8.12161 10.9523 8.13202 10.9523C8.14243 10.9523 8.15285 10.9497 8.16326 10.9445C8.17368 10.9393 8.18409 10.9366 8.1945 10.9366L10.1158 9.29649C10.1262 9.29649 10.134 9.29389 10.1393 9.28868C10.1445 9.28348 10.1523 9.27567 10.1627 9.26525C10.2356 9.2236 10.3137 9.18715 10.397 9.15591C10.4803 9.12467 10.5688 9.10384 10.6625 9.09343C10.7563 9.08301 10.8474 9.08562 10.9359 9.10124C11.0244 9.11686 11.1103 9.14029 11.1936 9.17153L14.8645 10.8273C14.9686 10.869 15.0649 10.9288 15.1534 11.0069C15.242 11.085 15.3122 11.1762 15.3643 11.2803C15.4268 11.3844 15.4685 11.4938 15.4893 11.6083C15.5101 11.7229 15.5153 11.8374 15.5049 11.952ZM14.5833 11.827C14.5833 11.8166 14.5807 11.8036 14.5755 11.788C14.5703 11.7723 14.5625 11.7541 14.5521 11.7333C14.5416 11.7229 14.5312 11.7125 14.5208 11.7021C14.5104 11.6916 14.5 11.6812 14.4896 11.6708L10.8031 10.0307C10.7927 10.0307 10.7823 10.0281 10.7719 10.0228C10.7615 10.0176 10.7511 10.015 10.7406 10.015C10.7302 10.0255 10.7198 10.0307 10.7094 10.0307C10.699 10.0307 10.6886 10.0359 10.6782 10.0463L8.77246 11.6708C8.76205 11.6812 8.75424 11.689 8.74903 11.6942C8.74382 11.6995 8.73601 11.7021 8.7256 11.7021C8.64229 11.7541 8.55638 11.7958 8.46786 11.827C8.37934 11.8583 8.28823 11.8791 8.1945 11.8895C8.10078 11.8895 8.00966 11.8817 7.92114 11.8661C7.83263 11.8504 7.74151 11.8218 7.64778 11.7802C7.29372 11.6135 6.94486 11.4001 6.60121 11.1397C6.24715 10.8898 5.91651 10.6112 5.60931 10.304C5.3021 9.99681 5.01833 9.66618 4.75799 9.31212C4.49765 8.96846 4.28417 8.61961 4.11755 8.26554C4.07589 8.18223 4.04726 8.09632 4.03164 8.0078C4.01602 7.91929 4.0082 7.82817 4.0082 7.73444C4.01862 7.64072 4.03684 7.5496 4.06288 7.46108C4.08891 7.37257 4.12796 7.28666 4.18003 7.20335C4.19044 7.19293 4.19825 7.18512 4.20346 7.17992C4.20867 7.17471 4.21127 7.1669 4.21127 7.15648L5.85143 5.20392C5.86184 5.19351 5.86705 5.18309 5.86705 5.17268C5.86705 5.16227 5.86705 5.15185 5.86705 5.14144C5.86705 5.13103 5.86705 5.12061 5.86705 5.1102C5.86705 5.09978 5.86184 5.08937 5.85143 5.07896L4.21127 1.42376C4.21127 1.40293 4.20606 1.38731 4.19565 1.37689C4.18524 1.36648 4.17482 1.35607 4.16441 1.34565C4.154 1.33524 4.14098 1.32743 4.12536 1.32222C4.10974 1.31702 4.09151 1.31441 4.07069 1.31441H4.05507C3.65935 1.36648 3.28706 1.48624 2.9382 1.67369C2.58934 1.86113 2.28474 2.10585 2.0244 2.40785C1.75364 2.70985 1.55058 3.04829 1.4152 3.42318C1.27982 3.79807 1.21213 4.18338 1.21213 4.5791C1.21213 5.97453 1.47768 7.28666 2.00878 8.51547C2.53988 9.73387 3.26102 10.8013 4.17222 11.7177C5.08342 12.6341 6.15342 13.3578 7.38224 13.8889C8.61105 14.42 9.92317 14.6856 11.3186 14.6856C11.7143 14.6856 12.0996 14.6153 12.4745 14.4747C12.8494 14.3341 13.1827 14.1336 13.4742 13.8733C13.7762 13.613 14.0236 13.3058 14.2162 12.9517C14.4089 12.5976 14.5312 12.2227 14.5833 11.827Z"
+                fill="#333333"
+              />
+            </svg>
+            8 800 350 38 95
+          </a>
+        </div>
+
+        <button
+          class="xl:flex hidden py-3.5 px-5 border border-[#0749CA] rounded-md text-base font-medium text-[#0749CA]"
+        >
+          Заказать звонок
+        </button>
+      </div>
+    </div>
+
+    <div x-data="{ isOpen: false }">
+      <!-- HEADER -->
+      <header id="top" class="xl:py-6 pb-6 border-b border-[#ECECEC] bg-white">
+        <div class="container mx-auto px-4 flex items-center gap-5">
+          <!-- Hamburger Button (Mobile) -->
+          <button class="lg:hidden" @click="isOpen = true">
+            <svg width="24" height="18" viewBox="0 0 48 36" fill="none">
+              <rect y="0.5" width="48" height="3" rx="1.5" fill="black" />
+              <rect y="17" width="48" height="3" rx="1.5" fill="black" />
+              <rect y="32.5" width="48" height="3" rx="1.5" fill="black" />
+            </svg>
+          </button>
+
+          <!-- Logo -->
+          <a href="#" class="max-w-11 md:max-w-54.5 w-full flex mr-auto">
+            <img
+              src="./assets/images/header/companyLogo.svg"
+              alt="company logo"
+              class="w-full max-md:hidden"
+            />
+            <img
+              src="./assets/images/header/companyLogoMini.png"
+              width="43"
+              height="43"
+              alt="company logo"
+              class="w-full md:hidden"
+            />
+          </a>
+
+          <!-- Desktop Menu -->
+          <ul class="xl:flex hidden items-center justify-between gap-12.5">
+            <li>
+              <a href="#" class="py-2.5 px-4 font-normal text-xl">Каталог</a>
+            </li>
+            <li>
+              <a href="#" class="py-2.5 px-4 font-normal text-xl">Где купить</a>
+            </li>
+            <li>
+              <a href="#" class="py-2.5 px-4 font-normal text-xl">Сервис</a>
+            </li>
+            <li>
+              <a href="#" class="py-2.5 px-4 font-normal text-xl">О компании</a>
+            </li>
+            <li>
+              <a href="#" class="py-2.5 px-4 font-normal text-xl">Контакты</a>
+            </li>
+          </ul>
+
+          <!-- Icons and Right Part -->
+          <ul class="flex items-center gap-5">
+            <li class="md:hidden">
+              <a href="#"><img src="./assets/icon/phone.svg" width="20" /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="./assets/icon/conatact.svg" width="20"
+              /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./assets/icon/heart.svg" width="22" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./assets/icon/chart.svg" width="20" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./assets/icon/basket.svg" width="25" /></a>
+            </li>
+            <li class="max-md:hidden">
+              <a href="#"><img src="./assets/icon/search.svg" width="20" /></a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- Hamburger Menu Content -->
+      <header
+        x-show="isOpen"
+        x-transition
+        @click.outside="isOpen = false"
+        id="top"
+        class="xl:py-6 md:hidden flex items-center justify-center !min-h-25 bg-white fixed left-0 top-0 w-full z-50"
+      >
+        <div class="container mx-auto px-4 flex items-center gap-5">
+          <!-- Logo -->
+          <a href="#" class="max-w-11 md:max-w-54.5 w-full flex mr-auto">
+            <img
+              src="./assets/images/header/companyLogo.svg"
+              alt="company logo"
+              class="w-full max-md:hidden"
+            />
+            <img
+              src="./assets/images/header/companyLogoMini.png"
+              width="43"
+              height="43"
+              alt="company logo"
+              class="w-full md:hidden"
+            />
+          </a>
+
+          <!-- Icons and Right Part -->
+          <ul class="flex items-center gap-5">
+            <li class="md:hidden">
+              <a href="#"><img src="./assets/icon/phone.svg" width="20" /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="./assets/icon/conatact.svg" width="20"
+              /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./assets/icon/heart.svg" width="22" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./assets/icon/chart.svg" width="20" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./assets/icon/basket.svg" width="25" /></a>
+            </li>
+            <li>
+              <a href="#"><img src="./assets/icon/search.svg" width="20" /></a>
+            </li>
+            <div class="flex justify-end">
+              <button @click="isOpen = false" class="text-black text-3xl">
+                &times;
+              </button>
+            </div>
+          </ul>
+        </div>
+      </header>
+
+      <div
+        class="fixed z-40 md:top-0 left-0 bg-white custom-scroll max-w-78 t-25 md:max-w-135.5 w-full pb-10 md:pt-16 h-screen overflow-y-auto transition-all duration-300"
+        x-show="isOpen"
+        x-transition
+        @click.outside="isOpen = false"
+      >
+        <div class="w-full">
+          <ul class="mb-6">
+            <li x-data="{ open: false }">
+              <button
+                @click.stop="open = !open"
+                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] w-full flex items-center gap-5 justify-between text-sm md:text-xl font-light"
+              >
+                Каталог
+                <img
+                  :class="{'rotate-180': open}"
+                  class="transition-transform duration-300"
+                  src="./assets/icon/dropdown.svg"
+                  alt="dropdown"
+                />
+              </button>
+
+              <!-- Dropdown -->
+              <ul
+                x-show="open"
+                x-transition
+                @click.stop
+                class="bg-gray-100 px-6 py-4 space-y-3 text-sm md:text-base"
+              >
+                <li><a href="#" class="block">Легковые подъемники</a></li>
+                <li><a href="#" class="block">Грузовые подъемники</a></li>
+                <li><a href="#" class="block">Поворотные столы</a></li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 justify-between text-sm md:text-xl font-light"
+                >Где купить</a
+              >
+            </li>
+            <li x-data="{ open: false }">
+              <button
+                @click.stop="open = !open"
+                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] w-full flex items-center gap-5 justify-between text-sm md:text-xl font-light"
+              >
+                Сервис
+                <img
+                  :class="{'rotate-180': open}"
+                  class="transition-transform duration-300"
+                  src="./assets/icon/dropdown.svg"
+                  alt="dropdown"
+                />
+              </button>
+              <!-- Dropdown for Сервис -->
+              <ul
+                x-show="open"
+                x-transition
+                @click.stop
+                class="bg-gray-100 px-6 py-4 space-y-3 text-sm md:text-base"
+              >
+                <li><a href="#" class="block">Техническая поддержка</a></li>
+                <li><a href="#" class="block">Гарантийное обслуживание</a></li>
+                <li><a href="#" class="block">Ремонт</a></li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 justify-between text-sm md:text-xl font-light"
+                >О компании</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 justify-between text-sm md:text-xl font-light"
+                >Контакты</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 bg-[#EBEBEB] text-sm md:text-xl font-light"
+              >
+                <img src="./assets/icon/heart.svg" width="20" alt="" />
+                Избранное</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 bg-[#EBEBEB] text-sm md:text-xl font-light"
+              >
+                <img src="./assets/icon/chart.svg" width="20" alt="" />
+                Сравнение товаров</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 bg-[#EBEBEB] text-sm md:text-xl font-light"
+              >
+                <img src="./assets/icon/basket.svg" width="20" alt="" />
+                Корзина</a
+              >
+            </li>
+          </ul>
+          <h2 class="md:text-xl text-sm font-light px-5 md:px-15 mb-7">
+            КОНТАКТНАЯ ИНФОРМАЦИЯ:
+          </h2>
+
+          <div class="flex flex-col gap-5 mr-hidden xl:mr-30.5 px-5 md:px-15">
+            <a
+              href="#"
+              class="flex items-center gap-3 md:text-xl text-sm font-light"
+            >
+              sivik@sivik.ru
+            </a>
+            <p class="md:text-xl text-sm font-light">
+              Часы работы с 09:00 до 18:00
+            </p>
+            <a
+              href="tel:8 800 350 38 95"
+              class="flex items-center gap-3 md:text-xl text-sm font-light"
+            >
+              <img src="./assets/icon/phone.svg" alt="" />
+              8 800 350 38 95
+            </a>
+            <button
+              class="max-w-47.25 mt-5 flex py-3.5 px-5 border border-[#0749CA] rounded-md text-base font-medium text-[#0749CA]"
+            >
+              Заказать звонок
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlay -->
+      <div
+        class="fixed top-0 left-0 w-full h-full bg-black/50 z-30 transition-opacity"
+        x-show="isOpen"
+        x-transition
+        @click="isOpen = false"
+      ></div>
+    </div>
+
+    <!-- catalog -->
+    <section class="md:pt-10 pb-13.75 md:pb-7">
+      <div class="container w-full">
+        <!-- navigation -->
+        <div class="md:flex hidden justify-center items-center gap-2.5 mb-7">
+          <a href="#" class="text-[#858585] text-base font-normal">Главная</a>
+          <span class="text-[#858585] text-base font-normal">-</span>
+          <a
+            href="#"
+            class="text-[#858585] text-base font-normal cursor-pointer"
+            >Каталог</a
+          >
+        </div>
+
+        <h2
+          class="font-medium text-2xl md:text-5xl text-center mb-5 md:mb-12.5"
+        >
+          Каталог
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          <a href="#" class="">
+            <img
+              src="./assets/images/catalog/Background.png"
+              alt="catalog img"
+              class="w-full object-cover mb-4 flex"
+            />
+            <h3 class="font-normal text-sm md:text-xl text-center px-5">
+              Балансировочные станки
+            </h3>
+          </a>
+          <a href="#" class="">
+            <img
+              src="./assets/images/catalog/Background-1.png"
+              alt="catalog img"
+              class="w-full object-cover mb-4 flex"
+            />
+            <h3 class="font-normal text-sm md:text-xl text-center px-5">
+              Шиномонтажное оборудование
+            </h3>
+          </a>
+          <a href="#" class="">
+            <img
+              src="./assets/images/catalog/Background-2.png"
+              alt="catalog img"
+              class="w-full object-cover mb-4 flex"
+            />
+            <h3 class="font-normal text-sm md:text-xl text-center px-5">
+              Станки для правки дисков (Дископравы)
+            </h3>
+          </a>
+          <a href="#" class="">
+            <img
+              src="./assets/images/catalog/Background-3.png"
+              alt="catalog img"
+              class="w-full object-cover mb-4 flex"
+            />
+            <h3 class="font-normal text-sm md:text-xl text-center px-5">
+              Автомобильные подъемники
+            </h3>
+          </a>
+          <a href="#" class="">
+            <img
+              src="./assets/images/catalog/Background-4.png"
+              alt="catalog img"
+              class="w-full object-cover mb-4 flex"
+            />
+            <h3 class="font-normal text-sm md:text-xl text-center px-5">
+              Стенды сход-развала
+            </h3>
+          </a>
+          <a href="#" class="">
+            <img
+              src="./assets/images/catalog/Background-5.png"
+              alt="catalog img"
+              class="w-full object-cover mb-4 flex"
+            />
+            <h3 class="font-normal text-sm md:text-xl text-center px-5">
+              Оборудование для замены технических жидкостей
+            </h3>
+          </a>
+          <a href="#" class="">
+            <img
+              src="./assets/images/catalog/Background-6.png"
+              alt="catalog img"
+              class="w-full object-cover mb-4 flex"
+            />
+            <h3 class="font-normal text-sm md:text-xl text-center px-5">
+              Гаражное оборудование
+            </h3>
+          </a>
+          <a href="#" class="">
+            <img
+              src="./assets/images/catalog/Background-7.png"
+              alt="catalog img"
+              class="w-full object-cover mb-4 flex"
+            />
+            <h3 class="font-normal text-sm md:text-xl text-center px-5">
+              Запасные части
+            </h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-13.75 md:pt-25 pb-20 md:pb-12.5">
+      <div class="container">
+        <p class="text-sm md:text-base font-light mb-5 md:mb-3.5">
+          НПО «Компания СИВИК» более 30 лет производит широкий ассортимент
+          оборудования и инструмента для станций технического обслуживания.
+          Сегодня более 50% СТО и шиномонтажных мастерских России используют
+          наши решения для успешного развития своего бизнеса. Станки, стенды,
+          подъемники компании можно встретить как в небольших гаражах, так и
+          крупнейших автосервисах не только в нашей стране, но и за рубежом.
+        </p>
+        <h2 class="text-sm md:text-2xl font-medium text-center mb-5 md:mb-4">
+          Каталог продукции
+        </h2>
+        <ol class="list-decimal pl-5 mb-5 md:mb-3.5">
+          <li class="text-sm md:text-base font-light">
+            Балансировочное оборудование. Мы производим станки для балансировки
+            легковых и грузовых колес, а также дополнительные аксессуары к ним
+            (конусы, адаптеры и пр.).
+          </li>
+          <li class="text-sm md:text-base font-light">
+            Шиномонтажное оборудование. У нас представлены автоматические,
+            полуавтоматические, грузовые станки, вспомогательные демонтажные
+            штанги, монтажные головки, адаптеры, устройства автоматической и
+            взрывной накачки, борторасширители.
+          </li>
+          <li class="text-sm md:text-base font-light">
+            Дископравное оборудование. Выпускаем стенды для правки кованых,
+            легкосплавных, штампованных дисков.
+          </li>
+          <li class="text-sm md:text-base font-light">
+            Автоподъемники. Один из самых важных видов оборудования для любого
+            автосервиса. Наша производственная линейка включает двухстоечные,
+            четырехстоечные, ножничные, пневматические, подкатные подъемники.
+          </li>
+          <li class="text-sm md:text-base font-light">
+            Стенды для регулировки схода-развала. Современные системы,
+            позволяющие с максимальной точностью регулировать углы установки
+            колес.
+          </li>
+          <li class="text-sm md:text-base font-light">
+            Установки для замены технических жидкостей. В каталоге есть модели
+            для замены масла в АКПП, антифриза, тормозной жидкости, а также для
+            промывки форсунок и топливной системы.
+          </li>
+          <li class="text-sm md:text-base font-light">
+            Гаражное оборудование. Предлагаем прочные и надежные слесарные
+            верстаки с двумя или тремя тумбами, станки для проточки тормозных
+            дисков.
+          </li>
+        </ol>
+        <p class="text-sm md:text-base font-light mb-5 md:mb-3.5">
+          Более подробно о представленном автосервисном оборудовании и
+          инструменте вы можете узнать из онлайн-каталога. Вы можете запросить
+          бесплатную консультацию по любому виду оборудования на сайте, а также
+          задать в онлайн-чате.
+        </p>
+        <h2 class="text-sm md:text-2xl font-medium text-center mb-5 md:mb-4">
+          Преимущества компании
+        </h2>
+        <ol class="list-decimal pl-5 mb-5 md:mb-3.5">
+          <li class="text-sm md:text-base font-light">
+            Современное производство. На нашем предприятии используются новейшие
+            станки с ЧПУ и роботизированные линии. Мы регулярно обновляем
+            технологический парк, внедряем инновационные методы организации
+            производственных работ.
+          </li>
+          <li class="text-sm md:text-base font-light">
+            Широкая сеть представительств. Наши авторизованные сервисные центры
+            работают в Москве и 31 регионе России. Вы можете приобрести
+            оборудование и инструмент для СТО с быстрой доставкой в любую точку
+            страны.
+          </li>
+          <li class="text-sm md:text-base font-light">
+            Безупречное качество. Продукция нашей компании отвечает ГОСТам и
+            другим стандартам, имеет подтверждающие сертификаты. Каждый этап
+            производства оборудования и инструмента для автосервиса тщательно
+            контролируется.
+          </li>
+        </ol>
+        <h2 class="text-sm md:text-2xl font-medium text-center mb-5 md:mb-4">
+          Преимущества компании
+        </h2>
+        <p class="text-sm md:text-base font-light">
+          Компания SIVIK осуществляет продажу оборудования и инструментов для
+          СТО через дилерскую сеть. Мы гарантируем высокое качество продукции и
+          конкурентоспособные цены, которые опубликованы на нашем сайте и
+          действуют на всей территории РФ. Обращайтесь к нам, и мы поможем
+          выбрать подходящее оборудование, которое позволит обеспечить
+          эффективную работу вашей СТО.
+        </p>
+      </div>
+    </section>
+
+    <!-- upper link -->
+    <a
+      href="#top"
+      class="hidden lg:flex items-center justify-center bg-white fixed left-20 bottom-12.5 z-30 rounded-sm w-15 h-15"
+    >
+      <img src="./assets/icon/arrow.svg" alt="arrow" />
+    </a>
+
+    <!-- Accept -->
+    <div
+      class="fixed hidden bottom-0 left-1/2 -translate-x-1/2 w-full lg:max-w-193.5 mx-auto bg-[#858585] lg:rounded-sm pt-9 md:pt-3.5 pb-9 md:pb-8 px-5"
+    >
+      <p
+        class="max-w-172 mx-auto text-center text-xs font-medium mb-4 md:mb-6 text-white"
+      >
+        НПО Компания СИВИК использует cookie (файлы с данными о прошлых
+        посещениях сайта) для персонализации сервисов и удобства пользователей.
+        Продолжая работу на веб-сайте, Вы даете согласие на обработку своих
+        персональных данных в соответствии с Политикой конфиденциальности,
+        опубликованной на веб-сайте https://sivik.ru
+      </p>
+      <button
+        class="max-w-43.5 mx-auto flex p-1 w-full justify-center rounded-sm border border-[#FFFFFF] !bg-transparent text-white font-medium text-xl"
+      >
+        Принять
+      </button>
+    </div>
+
+    <!-- footer -->
+    <footer
+      class="text-[#ACACAC] bg-[#333333] text-sm font-light pt-19 pb-5 md:pb-17.5"
+    >
+      <div
+        class="max-w-324 mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-4"
+      >
+        <!-- Каталог -->
+        <div>
+          <h3 class="font-semibold text-lg mb-3.75">Каталог</h3>
+          <ul class="space-y-2">
+            <li>Балансировочные станки</li>
+            <li>Шиномонтажное оборудование</li>
+            <li>Станки для правки дисков (Дископравы)</li>
+            <li>Автомобильные подъемники</li>
+            <li>Стенды сход-развала</li>
+            <li class="md:text-nowrap">
+              Оборудование для замены технических жидкостей
+            </li>
+            <li>Гаражное оборудование</li>
+            <li>Запасные части</li>
+          </ul>
+        </div>
+        <div class="border border-[#ACACAC] md:hidden block w-full"></div>
+        <div class="md:hidden w-full">
+          <div class="md:hidden flex items-center gap-20">
+            <ul class="space-y-2 mt-0 md:mt-0">
+              <li>Где купить</li>
+              <li>Сервис</li>
+              <li>О компании</li>
+              <li>Новости</li>
+              <li>Карта сайта</li>
+            </ul>
+
+            <div>
+              <ul class="space-y-2 mt-3 md:mt-0">
+                <li>Оплата</li>
+                <li>Доставка</li>
+                <li>Гарантия</li>
+                <li>Вопрос-ответ</li>
+              </ul>
+            </div>
+          </div>
+
+          <button
+            class="mt-6 px-4 py-2 !bg-transparent border border-[#ACACAC] rounded flex items-center gap-2 cursor-pointer"
+          >
+            <img src="./assets/images/footer/contaienr.svg" alt="" />
+            Подписаться на рассылку
+          </button>
+        </div>
+        <div class="border border-[#ACACAC] md:hidden block w-full"></div>
+
+        <div class="flex items-start mr-60">
+          <div class="md:block hidden">
+            <ul class="space-y-2 mt-8 md:mt-0">
+              <li>Где купить</li>
+              <li>Сервис</li>
+              <li>О компании</li>
+              <li>Новости</li>
+              <li>Карта сайта</li>
+            </ul>
+            <button
+              class="mt-6 px-4 py-2 border !bg-transparent border-[#ACACAC] rounded flex items-center gap-2 cursor-pointer"
+            >
+              <img src="./assets/images/footer/contaienr.svg" alt="" />
+              Подписаться на рассылку
+            </button>
+          </div>
+
+          <div class="md:block hidden">
+            <ul class="space-y-2 mt-3 md:mt-0">
+              <li>Оплата</li>
+              <li>Доставка</li>
+              <li>Гарантия</li>
+              <li>Вопрос-ответ</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="w-full md:w-fit max-md:mb-7">
+          <h3 class="font-semibold text-lg mb-4">Контакты</h3>
+          <p class="mb-3.75">ООО НПО “Компания СИВИК”</p>
+          <p class="mb-3.75">Россия, г. Омск, пр. Космический, 109/2</p>
+          <p class="mb-3.75">+7 (3812) 95-17-97</p>
+          <p class="mb-3.75">sivik@sivik.ru</p>
+          <p class="text-2xl font-medium mt-2">8 800 350 38 95</p>
+          <div class="flex items-center gap-3 mt-4">
+            <div
+              class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
+            >
+              <img src="./assets/images/footer/Icon.svg" alt="" />
+            </div>
+            <div
+              class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
+            >
+              <img src="./assets/images/footer/link.svg" alt="" />
+            </div>
+            <div
+              class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
+            >
+              <img src="./assets/images/footer/link3.svg" alt="" />
+            </div>
+            <div
+              class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
+            >
+              <img src="./assets/images/footer/link2.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-[#ACACAC] md:hidden block w-full"></div>
+
+      <div
+        class="max-w-324 mx-auto text-xs text-gray-400 md:mt-10 md:border-t border-[#ACACAC] pt-6 leading-relaxed px-4"
+      >
+        <p>
+          Все права на материалы, находящиеся на сайте www.sivik.ru являются
+          объектом исключительных прав, в том числе зарегистрированный товарный
+          знак Sivik, фото- и видеоизображения, статьи и т.п., охраняются в
+          соответствии с законодательством РФ. Запрещается автоматизированное
+          извлечение информации сайта любыми сервисами без официального
+          разрешения. Цитирование с сайта допускается только при наличии прямой
+          ссылки на сайт www.sivik.ru. Данные носят информационный характер.
+          Cогласно статьи 437 гражданского кодекса РФ не является публичной
+          офертой.
+        </p>
+        <div class="flex flex-wrap items-center justify-between">
+          <p class="md:mt-4">
+            © 2025 ООО НПО «Компания СИВИК» — Оборудование для автосервиса
+          </p>
+          <a href="#" class="md:mt-2 underline">Политика конфиденциальности</a>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
