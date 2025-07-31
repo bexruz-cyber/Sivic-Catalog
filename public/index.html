@@ -81,289 +81,729 @@
         </div>
 
         <button
-          class="xl:flex hidden py-3.5 px-5 border border-[#0749CA] rounded-md text-base font-medium text-[#0749CA]"
+          class="xl:flex hidden py-3.5 px-5 border bg-transparent border-[#0749CA] hover:bg-[#0749CA] hover:text-white transition-all duration-300 rounded-md text-base font-medium text-[#0749CA]"
         >
           Заказать звонок
         </button>
       </div>
     </div>
+    <!-- HEADER -->
+    <header
+      id="top"
+      x-data="{ scrolled: false }"
+      x-init="window.addEventListener('scroll', () => {
+    scrolled = window.scrollY > 50
+  })"
+      :class="{ 'pt-6': scrolled }"
+      class="xl:py-6 pb-6 border-b border-[#ECECEC] bg-white sticky top-0 transition-all duration-300"
+    >
+      <div class="container mx-auto px-4 flex items-center gap-5">
+        <!-- Hamburger Button (Mobile) -->
+        <button class="max-md:hidden xl:hidden hamburgerOpenBtn">
+          <svg width="48" height="35" viewBox="0 0 48 36" fill="none">
+            <rect y="0.5" width="48" height="3" rx="1.5" fill="black" />
+            <rect y="17" width="48" height="3" rx="1.5" fill="black" />
+            <rect y="32.5" width="48" height="3" rx="1.5" fill="black" />
+          </svg>
+        </button>
 
-    <div x-data="{ isOpen: false }">
-      <!-- HEADER -->
-      <header id="top" class="xl:py-6 pb-6 border-b border-[#ECECEC] bg-white">
-        <div class="container mx-auto px-4 flex items-center gap-5">
-          <!-- Hamburger Button (Mobile) -->
-          <button class="lg:hidden" @click="isOpen = true">
+        <!-- Logo -->
+        <a href="#" class="max-w-11 md:max-w-54.5 w-full flex max-xl:mr-auto">
+          <img
+            src="./assets/images/header/companyLogo.svg"
+            alt="company logo"
+            class="w-full max-md:hidden"
+          />
+          <img
+            src="./assets/images/header/companyLogoMini.png"
+            width="43"
+            height="43"
+            alt="company logo"
+            class="w-full md:hidden"
+          />
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="xl:flex hidden items-center justify-between gap-12.5">
+          <li class="relative group">
+            <a
+              href="#"
+              class="py-2.5 px-4 font-normal text-xl hover:text-[#0749CA] transition-all duration-300 after:w-full after:h-[1px] after:absolute after:bottom-0 after:-left-full overflow-x-hidden flex hover:after:left-0 after:transition-all after:duration-300 after:bg-[#255FCF] relative"
+              >Каталог</a
+            >
+            <ul
+              class="absolute top-11 left-1/2 -translate-x-1/2 custom-shadow bg-white p-4 rounded-md w-115 flex flex-col gap-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-20"
+            >
+              <li class="has-submenu w-full relative group">
+                <a
+                  href="/catalog/balansirovochnoe_oborudovanie/"
+                  class="hover:text-[#0749CA] transition-all duration-300 text-base font-light px-5"
+                  >Балансировочные станки</a
+                >
+                <ul
+                  class="absolute top-0 left-full ml-2 custom-shadow bg-white p-3 rounded-md flex flex-col gap-2 hame-menu__menu invisible opacity-0 transition-all duration-300 z-30"
+                >
+                  <li>
+                    <a
+                      href="/catalog/balansirovochnoe_oborudovanie/legkovye_balansirovochnye_stanki/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Легковые балансировочные станки</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/balansirovochnoe_oborudovanie/gruzovye_balansirovochnye_stanki/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Грузовые балансировочные станки</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/balansirovochnoe_oborudovanie/aksessuary_dlya_balansirovochnykh_stankov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Аксессуары для балансировочных станков</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="has-submenu w-full relative group">
+                <a
+                  href="/catalog/shinomontazhnoe_oborudovanie/"
+                  class="hover:text-[#0749CA] transition-all duration-300 text-base font-light px-5"
+                  >Шиномонтажное оборудование</a
+                >
+                <ul
+                  class="absolute top-0 left-full ml-2 custom-shadow bg-white p-3 rounded-md flex flex-col gap-2 hame-menu__menu invisible opacity-0 transition-all duration-300 z-30"
+                >
+                  <li>
+                    <a
+                      href="/catalog/shinomontazhnoe_oborudovanie/legkovye_shinomontazhnye_stanki/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Легковые шиномонтажные станки</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/shinomontazhnoe_oborudovanie/gruzovye_shinomontazhnye_stanki/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Грузовые шиномонтажные станки</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/shinomontazhnoe_oborudovanie/aksessuary_dlya_shinomontazhnykh_stankov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Аксессуары для шиномонтажных станков</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/shinomontazhnoe_oborudovanie/vspomogatelnoe_oborudovanie/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Вспомогательное оборудование</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="has-submenu w-full relative group">
+                <a
+                  href="/catalog/diskopravnoe_oborudovanie/"
+                  class="hover:text-[#0749CA] transition-all duration-300 text-base font-light px-5"
+                  >Станки для правки дисков (Дископравы)</a
+                >
+                <ul
+                  class="absolute top-0 left-full ml-2 custom-shadow bg-white p-3 rounded-md flex flex-col gap-2 hame-menu__menu invisible opacity-0 transition-all duration-300 z-30"
+                >
+                  <li>
+                    <a
+                      href="/catalog/diskopravnoe_oborudovanie/stanki_dlya_pravki_litykh_diskov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Станки для правки литых дисков</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/diskopravnoe_oborudovanie/stanki_dlya_pravki_shtampovannykh_diskov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Станки для правки штампованных дисков</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="has-submenu w-full relative group">
+                <a
+                  href="/catalog/avtopodyemnoe_oborudovanie/"
+                  class="hover:text-[#0749CA] transition-all duration-300 text-base font-light px-5"
+                  >Автомобильные подъемники</a
+                >
+                <ul
+                  class="absolute top-0 left-full ml-2 custom-shadow bg-white p-3 rounded-md flex flex-col gap-2 hame-menu__menu invisible opacity-0 transition-all duration-300 z-30"
+                >
+                  <li>
+                    <a
+                      href="/catalog/avtopodyemnoe_oborudovanie/dvukhstoechnye_podyemniki/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Двухстоечные подъемники</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/avtopodyemnoe_oborudovanie/chetyrekhstoechnye_podyemniki/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Четырехстоечные подъемники</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/avtopodyemnoe_oborudovanie/nozhnichnye_podyemniki/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Ножничные подъемники</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/avtopodyemnoe_oborudovanie/podkatnye_podyemniki/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Подкатные подъемники</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/avtopodyemnoe_oborudovanie/aksessuary_dlya_podemnikov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Аксессуары для подъемников</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="has-submenu w-full relative group">
+                <a
+                  href="/catalog/oborudovanie_dlya_regulirovki_razvala_skhozhdeniya/"
+                  class="hover:text-[#0749CA] transition-all duration-300 text-base font-light px-5"
+                  >Стенды сход-развала</a
+                >
+                <ul
+                  class="absolute top-0 left-full ml-2 custom-shadow bg-white p-3 rounded-md flex flex-col gap-2 hame-menu__menu invisible opacity-0 transition-all duration-300 z-30"
+                >
+                  <li>
+                    <a
+                      href="/catalog/oborudovanie_dlya_regulirovki_razvala_skhozhdeniya/stendy_dlya_regulirovki_razvala_skhozhdeniya/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Стенды для регулировки развала схождения</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/oborudovanie_dlya_regulirovki_razvala_skhozhdeniya/aksessuary_dlya_stendov_skhod_razvala/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Аксессуары для стендов сход-развала</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="has-submenu w-full relative">
+                <a
+                  href="/catalog/oborudovanie_dlya_zameni_tehnicheskih_zhidkostei/"
+                  class="hover:text-[#0749CA] transition-all duration-300 text-base font-light px-5"
+                  >Оборудование для замены технических жидкостей</a
+                >
+              </li>
+
+              <li class="has-submenu w-full relative group">
+                <a
+                  href="/catalog/garazhnoe_oborudovanie/"
+                  class="hover:text-[#0749CA] transition-all duration-300 text-base font-light px-5"
+                  >Гаражное оборудование</a
+                >
+                <ul
+                  class="absolute top-0 left-full ml-2 custom-shadow bg-white p-3 rounded-md flex flex-col gap-2 hame-menu__menu invisible opacity-0 transition-all duration-300 z-30"
+                >
+                  <li>
+                    <a
+                      href="/catalog/garazhnoe_oborudovanie/domkraty/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Домкраты</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/garazhnoe_oborudovanie/krany_gidravlicheskie/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Краны гидравлические</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/garazhnoe_oborudovanie/stoyki_transmissionnye_gidravlicheskie/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Стойки трансмиссионные гидравлические</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/garazhnoe_oborudovanie/oborudovanie_dlya_protochki_diskov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Оборудование для проточки дисков</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="has-submenu w-full relative group">
+                <a
+                  href="/catalog/parts/"
+                  class="hover:text-[#0749CA] transition-all duration-300 text-base font-light px-5"
+                  >Запасные части</a
+                >
+                <ul
+                  class="absolute top-0 left-full ml-2 custom-shadow bg-white p-3 rounded-md flex flex-col gap-2 hame-menu__menu invisible opacity-0 transition-all duration-300 z-30"
+                >
+                  <li>
+                    <a
+                      href="/catalog/parts/zapchasti_dlya_balansirovochnykh_stankov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Запчасти для балансировочных станков</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/parts/zapchasti_dlya_shinomontazhnykh_stankov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Запчасти для шиномонтажных станков</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/parts/zapchasti_dlya_diskopravnykh_stendov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Запчасти для дископравных стендов</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/parts/zapchasti_dlya_avtopodemnogo_oborudovaniya/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Запчасти для автоподъемного оборудования</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/parts/zapchasti_dlya_stendov_dlya_skhod_razvala_zenit_3d/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Запчасти для стендов для сход-развала Зенит-3D</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/parts/zapchasti_dlya_oborudovaniya_dlya_zameny_tekhnicheskikh_zhidkostey/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Запчасти для оборудования для замены технических
+                      жидкостей</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/catalog/parts/zapchasti_dlya_ustanovok_dlya_protochki_tormoznykh_diskov/"
+                      class="block px-3 py-1 hover:text-[#0749CA] transition-all duration-300 rounded text-nowrap"
+                      >Запчасти для установок для проточки тормозных дисков</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="py-2.5 px-4 font-normal text-xl hover:text-[#0749CA] transition-all duration-300 after:w-full after:h-[1px] after:absolute after:bottom-0 after:-left-full overflow-x-hidden flex hover:after:left-0 after:transition-all after:duration-300 after:bg-[#255FCF] relative"
+              >Где купить</a
+            >
+          </li>
+          <li class="relative group">
+            <a
+              href="#"
+              class="py-2.5 px-4 font-normal text-xl hover:text-[#0749CA] transition-all duration-300 after:w-full after:h-[1px] after:absolute after:bottom-0 after:-left-full overflow-x-hidden flex hover:after:left-0 after:transition-all after:duration-300 after:bg-[#255FCF] relative"
+              >Сервис</a
+            >
+            <ul
+              class="absolute top-11 left-1/2 -translate-x-1/2 custom-shadow bg-white p-4 rounded-md w-75.5 flex flex-col gap-4 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300"
+            >
+              <li>
+                <a
+                  href="/service/service_centers/"
+                  class="text-base font-light left-10 px-5"
+                  >Сервисные центры</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/service/manuals/"
+                  class="text-base font-light left-10 px-5"
+                  >Руководства по эксплуатации</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/service/catalogs/"
+                  class="text-base font-light left-10 px-5"
+                  >Каталоги запчастей</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://update.sivik.ru/login"
+                  class="text-base font-light left-10 px-5"
+                  >Обновление ПО и БД Зенит-3D</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/service/service_centers/?call=y"
+                  class="text-base font-light left-10 px-5"
+                  >Обратная связь</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/service/guarantee/"
+                  class="text-base font-light left-10 px-5"
+                  >Гарантия</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="py-2.5 px-4 font-normal text-xl hover:text-[#0749CA] transition-all duration-300 after:w-full after:h-[1px] after:absolute after:bottom-0 after:-left-full overflow-x-hidden flex hover:after:left-0 after:transition-all after:duration-300 after:bg-[#255FCF] relative"
+              >О компании</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="py-2.5 px-4 font-normal text-xl hover:text-[#0749CA] transition-all duration-300 after:w-full after:h-[1px] after:absolute after:bottom-0 after:-left-full overflow-x-hidden flex hover:after:left-0 after:transition-all after:duration-300 after:bg-[#255FCF] relative"
+              >Контакты</a
+            >
+          </li>
+        </ul>
+
+        <!-- Icons and Right Part -->
+        <ul class="flex items-center gap-5">
+          <li class="md:hidden">
+            <a href="#"><img src="./assets/icon/phone.svg" width="20" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/conatact.svg" width="20" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/heart.svg" width="22" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/chart.svg" width="20" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/basket.svg" width="25" /></a>
+          </li>
+          <li class="max-md:hidden">
+            <a href="#"><img src="./assets/icon/search.svg" width="20" /></a>
+          </li>
+
+          <button class="md:hidden hamburgerOpenBtn" @click="isOpen = true">
             <svg width="24" height="18" viewBox="0 0 48 36" fill="none">
               <rect y="0.5" width="48" height="3" rx="1.5" fill="black" />
               <rect y="17" width="48" height="3" rx="1.5" fill="black" />
               <rect y="32.5" width="48" height="3" rx="1.5" fill="black" />
             </svg>
           </button>
+        </ul>
+      </div>
+    </header>
 
-          <!-- Logo -->
-          <a href="#" class="max-w-11 md:max-w-54.5 w-full flex mr-auto">
-            <img
-              src="./assets/images/header/companyLogo.svg"
-              alt="company logo"
-              class="w-full max-md:hidden"
-            />
-            <img
-              src="./assets/images/header/companyLogoMini.png"
-              width="43"
-              height="43"
-              alt="company logo"
-              class="w-full md:hidden"
-            />
-          </a>
+    <header
+      class="hamburgerMenuHeader transition-all duration-300 xl:py-6 md:hidden flex items-center justify-center !min-h-25 bg-white fixed left-0 -top-full w-full z-50"
+    >
+      <div class="container mx-auto px-4 flex items-center gap-5">
+        <!-- Logo -->
+        <a href="#" class="max-w-11 md:max-w-54.5 w-full flex mr-auto">
+          <img
+            src="./assets/images/header/companyLogo.svg"
+            alt="company logo"
+            class="w-full max-md:hidden"
+          />
+          <img
+            src="./assets/images/header/companyLogoMini.png"
+            width="43"
+            height="43"
+            alt="company logo"
+            class="w-full md:hidden"
+          />
+        </a>
 
-          <!-- Desktop Menu -->
-          <ul class="xl:flex hidden items-center justify-between gap-12.5">
-            <li>
-              <a href="#" class="py-2.5 px-4 font-normal text-xl">Каталог</a>
-            </li>
-            <li>
-              <a href="#" class="py-2.5 px-4 font-normal text-xl">Где купить</a>
-            </li>
-            <li>
-              <a href="#" class="py-2.5 px-4 font-normal text-xl">Сервис</a>
-            </li>
-            <li>
-              <a href="#" class="py-2.5 px-4 font-normal text-xl">О компании</a>
-            </li>
-            <li>
-              <a href="#" class="py-2.5 px-4 font-normal text-xl">Контакты</a>
-            </li>
-          </ul>
-
-          <!-- Icons and Right Part -->
-          <ul class="flex items-center gap-5">
-            <li class="md:hidden">
-              <a href="#"><img src="./assets/icon/phone.svg" width="20" /></a>
-            </li>
-            <li>
-              <a href="#"
-                ><img src="./assets/icon/conatact.svg" width="20"
-              /></a>
-            </li>
-            <li>
-              <a href="#"><img src="./assets/icon/heart.svg" width="22" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="./assets/icon/chart.svg" width="20" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="./assets/icon/basket.svg" width="25" /></a>
-            </li>
-            <li class="max-md:hidden">
-              <a href="#"><img src="./assets/icon/search.svg" width="20" /></a>
-            </li>
-          </ul>
-        </div>
-      </header>
-
-      <!-- Hamburger Menu Content -->
-      <header
-        x-show="isOpen"
-        x-transition
-        @click.outside="isOpen = false"
-        id="top"
-        class="xl:py-6 md:hidden flex items-center justify-center !min-h-25 bg-white fixed left-0 top-0 w-full z-50"
-      >
-        <div class="container mx-auto px-4 flex items-center gap-5">
-          <!-- Logo -->
-          <a href="#" class="max-w-11 md:max-w-54.5 w-full flex mr-auto">
-            <img
-              src="./assets/images/header/companyLogo.svg"
-              alt="company logo"
-              class="w-full max-md:hidden"
-            />
-            <img
-              src="./assets/images/header/companyLogoMini.png"
-              width="43"
-              height="43"
-              alt="company logo"
-              class="w-full md:hidden"
-            />
-          </a>
-
-          <!-- Icons and Right Part -->
-          <ul class="flex items-center gap-5">
-            <li class="md:hidden">
-              <a href="#"><img src="./assets/icon/phone.svg" width="20" /></a>
-            </li>
-            <li>
-              <a href="#"
-                ><img src="./assets/icon/conatact.svg" width="20"
-              /></a>
-            </li>
-            <li>
-              <a href="#"><img src="./assets/icon/heart.svg" width="22" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="./assets/icon/chart.svg" width="20" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="./assets/icon/basket.svg" width="25" /></a>
-            </li>
-            <li>
-              <a href="#"><img src="./assets/icon/search.svg" width="20" /></a>
-            </li>
-            <div class="flex justify-end">
-              <button @click="isOpen = false" class="text-black text-3xl">
-                &times;
-              </button>
-            </div>
-          </ul>
-        </div>
-      </header>
-
-      <div
-        class="fixed z-40 md:top-0 left-0 bg-white custom-scroll max-w-78 t-25 md:max-w-135.5 w-full pb-10 md:pt-16 h-screen overflow-y-auto transition-all duration-300"
-        x-show="isOpen"
-        x-transition
-        @click.outside="isOpen = false"
-      >
-        <div class="w-full">
-          <ul class="mb-6">
-            <li x-data="{ open: false }">
-              <button
-                @click.stop="open = !open"
-                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] w-full flex items-center gap-5 justify-between text-sm md:text-xl font-light"
-              >
-                Каталог
-                <img
-                  :class="{'rotate-180': open}"
-                  class="transition-transform duration-300"
-                  src="./assets/icon/dropdown.svg"
-                  alt="dropdown"
-                />
-              </button>
-
-              <!-- Dropdown -->
-              <ul
-                x-show="open"
-                x-transition
-                @click.stop
-                class="bg-gray-100 px-6 py-4 space-y-3 text-sm md:text-base"
-              >
-                <li><a href="#" class="block">Легковые подъемники</a></li>
-                <li><a href="#" class="block">Грузовые подъемники</a></li>
-                <li><a href="#" class="block">Поворотные столы</a></li>
-              </ul>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 justify-between text-sm md:text-xl font-light"
-                >Где купить</a
-              >
-            </li>
-            <li x-data="{ open: false }">
-              <button
-                @click.stop="open = !open"
-                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] w-full flex items-center gap-5 justify-between text-sm md:text-xl font-light"
-              >
-                Сервис
-                <img
-                  :class="{'rotate-180': open}"
-                  class="transition-transform duration-300"
-                  src="./assets/icon/dropdown.svg"
-                  alt="dropdown"
-                />
-              </button>
-              <!-- Dropdown for Сервис -->
-              <ul
-                x-show="open"
-                x-transition
-                @click.stop
-                class="bg-gray-100 px-6 py-4 space-y-3 text-sm md:text-base"
-              >
-                <li><a href="#" class="block">Техническая поддержка</a></li>
-                <li><a href="#" class="block">Гарантийное обслуживание</a></li>
-                <li><a href="#" class="block">Ремонт</a></li>
-              </ul>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 justify-between text-sm md:text-xl font-light"
-                >О компании</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 justify-between text-sm md:text-xl font-light"
-                >Контакты</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 bg-[#EBEBEB] text-sm md:text-xl font-light"
-              >
-                <img src="./assets/icon/heart.svg" width="20" alt="" />
-                Избранное</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 bg-[#EBEBEB] text-sm md:text-xl font-light"
-              >
-                <img src="./assets/icon/chart.svg" width="20" alt="" />
-                Сравнение товаров</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="md:px-15 p-5 md:py-6.5 border-b border-[#C8C8C8B2] flex items-center gap-5 bg-[#EBEBEB] text-sm md:text-xl font-light"
-              >
-                <img src="./assets/icon/basket.svg" width="20" alt="" />
-                Корзина</a
-              >
-            </li>
-          </ul>
-          <h2 class="md:text-xl text-sm font-light px-5 md:px-15 mb-7">
-            КОНТАКТНАЯ ИНФОРМАЦИЯ:
-          </h2>
-
-          <div class="flex flex-col gap-5 mr-hidden xl:mr-30.5 px-5 md:px-15">
-            <a
-              href="#"
-              class="flex items-center gap-3 md:text-xl text-sm font-light"
-            >
-              sivik@sivik.ru
-            </a>
-            <p class="md:text-xl text-sm font-light">
-              Часы работы с 09:00 до 18:00
-            </p>
-            <a
-              href="tel:8 800 350 38 95"
-              class="flex items-center gap-3 md:text-xl text-sm font-light"
-            >
-              <img src="./assets/icon/phone.svg" alt="" />
-              8 800 350 38 95
-            </a>
-            <button
-              class="max-w-47.25 mt-5 flex py-3.5 px-5 border border-[#0749CA] rounded-md text-base font-medium text-[#0749CA]"
-            >
-              Заказать звонок
+        <!-- Icons and Right Part -->
+        <ul class="flex items-center gap-5">
+          <li class="md:hidden">
+            <a href="#"><img src="./assets/icon/phone.svg" width="20" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/conatact.svg" width="20" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/heart.svg" width="22" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/chart.svg" width="20" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/basket.svg" width="25" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="./assets/icon/search.svg" width="20" /></a>
+          </li>
+          <div class="flex justify-end">
+            <button class="text-black text-3xl hamburgerMenuClose">
+              &times;
             </button>
           </div>
+        </ul>
+      </div>
+    </header>
+
+    <div
+      class="hamburgerMenu fixed z-40 md:top-0 -left-full bg-white custom-scroll max-w-78 t-25 md:max-w-135.5 w-full pb-10 md:pt-16 h-screen overflow-y-auto transition-all duration-300"
+    >
+      <div class="w-full">
+        <ul class="mb-6 transition-all  duration-300">
+          <li class="border-b border-[#C8C8C8B2]">
+            <button
+              class="dropdown-toggle md:px-15 p-5 md:py-6.5 w-full flex items-center gap-5 justify-between text-sm md:text-xl font-light hover:text-[#0749CA] transition-all duration-300"
+            >
+              Каталог
+              <img
+                :class="{'rotate-180': open}"
+                class="transition-transform duration-300"
+                src="./assets/icon/dropdown.svg"
+                alt="dropdown"
+              />
+            </button>
+
+            <!-- Dropdown -->
+            <div
+              class="dropdown-content transition-height duration-300 overflow-hidden"
+              style="height: 0"
+            >
+              <!-- Katalog ichki menyusi -->
+              <ul class="px-25 pb-4 gap-4 flex flex-col text-sm md:text-xl font-light ">
+                <!-- Har bir <li> — bu ichki katalog bo'limi -->
+
+                <!-- Балансировочные станки -->
+                <li>
+                  <a
+                    href="/catalog/balansirovochnoe_oborudovanie/"
+                    class="hover:text-[#0749CA] transition-all duration-300"
+                  >
+                    Балансировочные станки
+                  </a>
+                </li>
+
+                <!-- Шиномонтажное оборудование -->
+                <li>
+                  <a
+                    href="/catalog/shinomontazhnoe_oborudovanie/"
+                    class="hover:text-[#0749CA] transition-all duration-300"
+                  >
+                    Шиномонтажное оборудование
+                  </a>
+                </li>
+
+                <!-- Станки для правки дисков (Дископравы) -->
+                <li>
+                  <a href="/catalog/diskopravnoe_oborudovanie/" class="hover:text-[#0749CA] transition-all duration-300">
+                    Станки для правки дисков (Дископравы)
+                  </a>
+                </li>
+
+                <!-- Автомобильные подъемники -->
+                <li>
+                  <a href="/catalog/avtopodyemnoe_oborudovanie/" class="hover:text-[#0749CA] transition-all duration-300">
+                    Автомобильные подъемники
+                  </a>
+                </li>
+
+                <!-- Стенды сход-развала -->
+                <li>
+                  <a
+                    href="/catalog/oborudovanie_dlya_regulirovki_razvala_skhozhdeniya/"
+                    class="hover:text-[#0749CA] transition-all duration-300"
+                  >
+                    Стенды сход-развала
+                  </a>
+                </li>
+
+                <!-- Оборудование для замены технических жидкостей -->
+                <li>
+                  <a
+                    href="/catalog/oborudovanie_dlya_zameni_tehnicheskih_zhidkostei/"
+                    class="hover:text-[#0749CA] transition-all duration-300"
+                  >
+                    Оборудование для замены технических жидкостей
+                  </a>
+                </li>
+
+                <!-- Гаражное оборудование -->
+                <li>
+                  <a href="/catalog/garazhnoe_oborudovanie/" class="hover:text-[#0749CA] transition-all duration-300">
+                    Гаражное оборудование
+                  </a>
+                </li>
+
+                <!-- Запасные части -->
+                <li>
+                  <a href="/catalog/parts/" class="hover:text-[#0749CA] transition-all duration-300"> Запасные части </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="border-b border-[#C8C8C8B2]">
+            <a
+              href="#"
+              class="md:px-15 p-5 md:py-6.5 flex items-center gap-5 justify-between text-sm md:text-xl font-light hover:text-[#0749CA] transition-all duration-300"
+              >Где купить</a
+            >
+          </li>
+          <li class="border-b border-[#C8C8C8B2]">
+            <button
+              class="dropdown-toggle md:px-15 p-5 md:py-6.5 w-full flex items-center gap-5 justify-between text-sm md:text-xl font-light hover:text-[#0749CA] transition-all duration-300"
+            >
+              Сервис
+              <img
+                :class="{'rotate-180': open}"
+                class="transition-transform duration-300"
+                src="./assets/icon/dropdown.svg"
+                alt="dropdown"
+              />
+            </button>
+            <!-- Dropdown -->
+            <div
+              class="dropdown-content transition-height duration-300 overflow-hidden"
+              style="height: 0"
+            >
+              <ul class="px-25 pb-4 gap-4 flex flex-col text-sm md:text-xl">
+                <li><a href="#" class="hover:text-[#0749CA] transition-all duration-300">Сервисные центры</a></li>
+                <li><a href="#" class="hover:text-[#0749CA] transition-all duration-300">Руководства по эксплуатации</a></li>
+                <li><a href="#" class="hover:text-[#0749CA] transition-all duration-300">Каталоги запчастей</a></li>
+                <li>
+                  <a href="#" class="hover:text-[#0749CA] transition-all duration-300"
+                    >Обновление ПО и БД Зенит-3D</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-[#0749CA] transition-all duration-300"
+                    >Обратная связь</a
+                  >
+                </li>
+                 <li>
+                  <a href="#" class="hover:text-[#0749CA] transition-all duration-300"
+                    >Гарантия</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="border-b border-[#C8C8C8B2]">
+            <a
+              href="#"
+              class="md:px-15 p-5 md:py-6.5 flex items-center gap-5 justify-between text-sm md:text-xl font-light hover:text-[#0749CA] transition-all duration-300"
+              >О компании</a
+            >
+          </li>
+          <li class="border-b border-[#C8C8C8B2]">
+            <a
+              href="#"
+              class="md:px-15 p-5 md:py-6.5 flex items-center gap-5 justify-between text-sm md:text-xl font-light hover:text-[#0749CA] transition-all duration-300"
+              >Контакты</a
+            >
+          </li>
+          <li class="border-b border-[#C8C8C8B2]">
+            <a
+              href="#"
+              class="md:px-15 p-5 md:py-6.5 flex items-center gap-5 bg-[#EBEBEB] text-sm md:text-xl font-light hover:text-[#0749CA] transition-all duration-300"
+            >
+              <img src="./assets/icon/heart.svg" width="20" alt="" />
+              Избранное</a
+            >
+          </li>
+          <li class="border-b border-[#C8C8C8B2]">
+            <a
+              href="#"
+              class="md:px-15 p-5 md:py-6.5 flex items-center gap-5 bg-[#EBEBEB] text-sm md:text-xl font-light hover:text-[#0749CA] transition-all duration-300"
+            >
+              <img src="./assets/icon/chart.svg" width="20" alt="" />
+              Сравнение товаров</a
+            >
+          </li>
+          <li class="border-b border-[#C8C8C8B2]">
+            <a
+              href="#"
+              class="md:px-15 p-5 md:py-6.5 flex items-center gap-5 bg-[#EBEBEB] text-sm md:text-xl font-light hover:text-[#0749CA] transition-all duration-300"
+            >
+              <img src="./assets/icon/basket.svg" width="20" alt="" />
+              Корзина</a
+            >
+          </li>
+        </ul>
+        <h2 class="md:text-xl text-sm font-light px-5 md:px-15 mb-7">
+          КОНТАКТНАЯ ИНФОРМАЦИЯ:
+        </h2>
+
+        <div class="flex flex-col gap-5 mr-hidden xl:mr-30.5 px-5 md:px-15">
+          <a
+            href="#"
+            class="flex items-center gap-3 md:text-xl text-sm font-light hover:text-[#0749CA] transition-all duration-300"
+          >
+            <svg
+              width="23"
+              height="21"
+              viewBox="0 0 23 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3.81299 2.41406C3.16195 2.41406 2.60205 2.64518 2.1333 3.10742C1.66455 3.56966 1.43018 4.1263 1.43018 4.77734V6.08594L11.0005 10.8711C11.1437 10.9362 11.2902 10.9688 11.4399 10.9688C11.5897 10.9688 11.7297 10.9362 11.8599 10.8711L21.4302 6.08594V4.77734C21.4302 4.1263 21.1991 3.56966 20.7368 3.10742C20.2746 2.64518 19.7114 2.41406 19.0474 2.41406H3.81299ZM1.43018 7.6875V16.2227C1.43018 16.8737 1.66455 17.4303 2.1333 17.8926C2.60205 18.3548 3.16195 18.5859 3.81299 18.5859H19.0474C19.7114 18.5859 20.2746 18.3548 20.7368 17.8926C21.1991 17.4303 21.4302 16.8737 21.4302 16.2227V7.6875L11.4302 12.6875L1.43018 7.6875ZM0.00439453 4.77734C0.00439453 4.25651 0.102051 3.76823 0.297363 3.3125C0.505697 2.84375 0.782389 2.43685 1.12744 2.0918C1.47249 1.74674 1.87288 1.47656 2.32861 1.28125C2.79736 1.07292 3.29216 0.96875 3.81299 0.96875H19.0474C19.5812 0.96875 20.076 1.07292 20.5317 1.28125C21.0005 1.47656 21.4074 1.74674 21.7524 2.0918C22.0975 2.43685 22.3677 2.84375 22.563 3.3125C22.7583 3.76823 22.856 4.25651 22.856 4.77734V16.2227C22.856 16.7435 22.7583 17.2318 22.563 17.6875C22.3677 18.1562 22.0975 18.5632 21.7524 18.9082C21.4074 19.2533 21.0005 19.5234 20.5317 19.7188C20.076 19.9271 19.5812 20.0312 19.0474 20.0312H3.81299C3.29216 20.0312 2.79736 19.9271 2.32861 19.7188C1.87288 19.5234 1.47249 19.2533 1.12744 18.9082C0.782389 18.5632 0.505697 18.1562 0.297363 17.6875C0.102051 17.2318 0.00439453 16.7435 0.00439453 16.2227V4.77734Z"
+                fill="#0749CA"
+              />
+            </svg>
+
+            sivik@sivik.ru
+          </a>
+          <p class="md:text-xl text-sm font-light">
+            Часы работы с 09:00 до 18:00
+          </p>
+          <a
+            href="tel:8 800 350 38 95"
+            class="flex items-center gap-3 md:text-xl text-sm font-light hover:text-[#0749CA] transition-all duration-300"
+          >
+            <img src="./assets/icon/phone.svg" alt="" />
+            8 800 350 38 95
+          </a>
+          <button
+            class="max-w-47.25 mt-5 flex py-3.5 px-5 border transition-all duration-300 border-[#0749CA] hover:bg-[#0749CA] hover:text-white rounded-md text-base font-medium text-[#0749CA]"
+          >
+            Заказать звонок
+          </button>
         </div>
       </div>
-
-      <!-- Overlay -->
-      <div
-        class="fixed top-0 left-0 w-full h-full bg-black/50 z-30 transition-opacity"
-        x-show="isOpen"
-        x-transition
-        @click="isOpen = false"
-      ></div>
     </div>
+    <!-- Overlay -->
+    <div
+      class="hamburgerOverlay fixed hidden top-0 left-0 w-full h-full bg-black/50 z-30 transition-opacity"
+    ></div>
 
     <!-- catalog -->
     <section class="md:pt-10 pb-13.75 md:pb-7">
@@ -593,44 +1033,46 @@
 
     <!-- footer -->
     <footer
-      class="text-[#ACACAC] bg-[#333333] text-sm font-light pt-19 pb-5 md:pb-17.5"
+      class="text-[#ACACAC] bg-[#333333] text-sm font-light pt-19 pb-5 lg:pb-17.5"
     >
       <div
-        class="max-w-324 mx-auto flex flex-col md:flex-row items-center justify-between gap-8 px-4"
+        class="max-w-324 mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 px-4"
       >
         <!-- Каталог -->
-        <div>
+        <div class="max-lg:w-full">
           <h3 class="font-semibold text-lg mb-3.75">Каталог</h3>
           <ul class="space-y-2">
-            <li>Балансировочные станки</li>
-            <li>Шиномонтажное оборудование</li>
-            <li>Станки для правки дисков (Дископравы)</li>
-            <li>Автомобильные подъемники</li>
-            <li>Стенды сход-развала</li>
-            <li class="md:text-nowrap">
-              Оборудование для замены технических жидкостей
+            <li><a href="#">Балансировочные станки</a></li>
+            <li><a href="#">Шиномонтажное оборудование</a></li>
+            <li><a href="#">Станки для правки дисков (Дископравы)</a></li>
+            <li><a href="#">Автомобильные подъемники</a></li>
+            <li><a href="#">Стенды сход-развала</a></li>
+            <li class="lg:text-nowrap">
+              <a href="#">Оборудование для замены технических жидкостей</a>
             </li>
-            <li>Гаражное оборудование</li>
-            <li>Запасные части</li>
+            <li><a href="#">Гаражное оборудование</a></li>
+            <li><a href="#">Запасные части</a></li>
           </ul>
         </div>
-        <div class="border border-[#ACACAC] md:hidden block w-full"></div>
-        <div class="md:hidden w-full">
-          <div class="md:hidden flex items-center gap-20">
-            <ul class="space-y-2 mt-0 md:mt-0">
-              <li>Где купить</li>
-              <li>Сервис</li>
-              <li>О компании</li>
-              <li>Новости</li>
-              <li>Карта сайта</li>
+
+        <div class="border border-[#ACACAC] lg:hidden block w-full"></div>
+
+        <div class="lg:hidden w-full">
+          <div class="lg:hidden flex items-center gap-20">
+            <ul class="space-y-2 mt-0 lg:mt-0">
+              <li><a href="#">Где купить</a></li>
+              <li><a href="#">Сервис</a></li>
+              <li><a href="#">О компании</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Карта сайта</a></li>
             </ul>
 
             <div>
-              <ul class="space-y-2 mt-3 md:mt-0">
-                <li>Оплата</li>
-                <li>Доставка</li>
-                <li>Гарантия</li>
-                <li>Вопрос-ответ</li>
+              <ul class="space-y-2 mt-3 lg:mt-0">
+                <li><a href="#">Оплата</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Гарантия</a></li>
+                <li><a href="#">Вопрос-ответ</a></li>
               </ul>
             </div>
           </div>
@@ -642,16 +1084,17 @@
             Подписаться на рассылку
           </button>
         </div>
-        <div class="border border-[#ACACAC] md:hidden block w-full"></div>
 
-        <div class="flex items-start mr-60">
-          <div class="md:block hidden">
-            <ul class="space-y-2 mt-8 md:mt-0">
-              <li>Где купить</li>
-              <li>Сервис</li>
-              <li>О компании</li>
-              <li>Новости</li>
-              <li>Карта сайта</li>
+        <div class="border border-[#ACACAC] lg:hidden block w-full"></div>
+
+        <div class="flex items-start xl:mr-60">
+          <div class="lg:block hidden">
+            <ul class="space-y-2 mt-8 lg:mt-0">
+              <li><a href="#">Где купить</a></li>
+              <li><a href="#">Сервис</a></li>
+              <li><a href="#">О компании</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Карта сайта</a></li>
             </ul>
             <button
               class="mt-6 px-4 py-2 border !bg-transparent border-[#ACACAC] rounded flex items-center gap-2 cursor-pointer"
@@ -661,52 +1104,66 @@
             </button>
           </div>
 
-          <div class="md:block hidden">
-            <ul class="space-y-2 mt-3 md:mt-0">
-              <li>Оплата</li>
-              <li>Доставка</li>
-              <li>Гарантия</li>
-              <li>Вопрос-ответ</li>
+          <div class="lg:block hidden">
+            <ul class="space-y-2 mt-3 lg:mt-0">
+              <li><a href="#">Оплата</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Гарантия</a></li>
+              <li><a href="#">Вопрос-ответ</a></li>
             </ul>
           </div>
         </div>
 
-        <div class="w-full md:w-fit max-md:mb-7">
+        <div class="w-full lg:w-fit max-lg:mb-7">
           <h3 class="font-semibold text-lg mb-4">Контакты</h3>
           <p class="mb-3.75">ООО НПО “Компания СИВИК”</p>
           <p class="mb-3.75">Россия, г. Омск, пр. Космический, 109/2</p>
-          <p class="mb-3.75">+7 (3812) 95-17-97</p>
-          <p class="mb-3.75">sivik@sivik.ru</p>
-          <p class="text-2xl font-medium mt-2">8 800 350 38 95</p>
+          <p class="mb-3.75">
+            <a href="tel:+73812951797">+7 (3812) 95-17-97</a>
+          </p>
+          <p class="mb-3.75">
+            <a href="mailto:sivik@sivik.ru">sivik@sivik.ru</a>
+          </p>
+          <p class="text-2xl font-medium mt-2">
+            <a href="tel:88003503895">8 800 350 38 95</a>
+          </p>
           <div class="flex items-center gap-3 mt-4">
-            <div
-              class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
-            >
-              <img src="./assets/images/footer/Icon.svg" alt="" />
-            </div>
-            <div
-              class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
-            >
-              <img src="./assets/images/footer/link.svg" alt="" />
-            </div>
-            <div
-              class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
-            >
-              <img src="./assets/images/footer/link3.svg" alt="" />
-            </div>
-            <div
-              class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
-            >
-              <img src="./assets/images/footer/link2.svg" alt="" />
-            </div>
+            <a href="#">
+              <div
+                class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
+              >
+                <img src="./assets/images/footer/Icon.svg" alt="" />
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
+              >
+                <img src="./assets/images/footer/link.svg" alt="" />
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
+              >
+                <img src="./assets/images/footer/link3.svg" alt="" />
+              </div>
+            </a>
+            <a href="#">
+              <div
+                class="w-8 h-8 border border-[#ACACAC] flex items-center justify-center rounded-[5px] cursor-pointer"
+              >
+                <img src="./assets/images/footer/link2.svg" alt="" />
+              </div>
+            </a>
           </div>
         </div>
       </div>
 
-      <div class="border border-[#ACACAC] md:hidden block w-full"></div>
+      <div class="border border-[#ACACAC] lg:hidden block w-full"></div>
 
       <div
-        class="max-w-324 mx-auto text-xs text-gray-400 md:mt-10 md:border-t border-[#ACACAC] pt-6 leading-relaxed px-4"
+        class="max-w-324 mx-auto text-xs text-gray-400 lg:mt-10 lg:border-t border-[#ACACAC] pt-6 leading-relaxed px-4"
       >
         <p>
           Все права на материалы, находящиеся на сайте www.sivik.ru являются
@@ -720,10 +1177,10 @@
           офертой.
         </p>
         <div class="flex flex-wrap items-center justify-between">
-          <p class="md:mt-4">
+          <p class="lg:mt-4">
             © 2025 ООО НПО «Компания СИВИК» — Оборудование для автосервиса
           </p>
-          <a href="#" class="md:mt-2 underline">Политика конфиденциальности</a>
+          <a href="#" class="lg:mt-2 underline">Политика конфиденциальности</a>
         </div>
       </div>
     </footer>
