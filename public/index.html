@@ -575,6 +575,12 @@
     </header>
 
     <div
+    id="top"
+      x-data="{ scrolled: false }"
+      x-init="window.addEventListener('scroll', () => {
+    scrolled = window.scrollY > 50
+  })"
+      :class="{ 'top-25': scrolled }"
       class="hamburgerMenu fixed z-40 md:top-0 -left-full bg-white custom-scroll max-w-78 t-25 md:max-w-135.5 w-full pb-10 md:pt-16 h-screen overflow-y-auto transition-all duration-300"
     >
       <div class="w-full">
